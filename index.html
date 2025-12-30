@@ -13,9 +13,7 @@
   <style>
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -25,15 +23,9 @@
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     header {
       padding: 4rem 10vw 2.5rem;
@@ -109,9 +101,7 @@
       margin: 0.4rem 0 0;
     }
 
-    .taglist li {
-      margin-bottom: 0.3rem;
-    }
+    .taglist li { margin-bottom: 0.3rem; }
 
     .pill-list {
       display: flex;
@@ -154,9 +144,7 @@
       border-radius: 0.8rem;
     }
 
-    .testimonial h3 {
-      margin-bottom: 0.6rem;
-    }
+    .testimonial h3 { margin-bottom: 0.6rem; }
 
     .attribution {
       font-size: 0.9rem;
@@ -172,113 +160,7 @@
       margin: 0 0 1rem;
     }
 
-    .contact-block {
-      margin-top: 2.5rem;
-    }
-
-    /* Contact form */
-    .contact-intro {
-      text-align: center;
-      margin-bottom: 1.8rem;
-    }
-
-    .contact-form {
-      background: #F9F7F2;
-      border-radius: 0.8rem;
-      border: 1px solid #E1DBD0;
-      padding: 1.8rem 1.6rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-
-    label {
-      font-size: 0.9rem;
-      color: #5A5448;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    select {
-      font-family: inherit;
-      font-size: 0.95rem;
-      padding: 0.5rem 0.6rem;
-      border-radius: 0.4rem;
-      border: 1px solid #D5D0C5;
-      background: #FDFBF6;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .phone-row {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 0.4rem;
-    }
-
-    .checkbox-row {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-      font-size: 0.85rem;
-      color: #5A5448;
-      margin-top: 0.4rem;
-    }
-
-    .checkbox-row input[type="checkbox"] {
-      margin-top: 0.2rem;
-    }
-
-    .form-actions {
-      margin-top: 0.8rem;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid #C3B8A5;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: #FDFBF6;
-      cursor: pointer;
-    }
-
-    .contact-portrait-wrapper {
-      margin: 2rem auto 0;
-      max-width: 220px;
-      border-radius: 1rem;
-      overflow: hidden;
-      border: 1px solid #E1DBD0;
-      background: #F9F7F2;
-    }
-
-    .contact-portrait {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
     /* ---------- TABS UI ---------- */
-
     .tab-menu {
       display: flex;
       gap: 1rem;
@@ -318,13 +200,8 @@
       transform: translateY(-1px);
     }
 
-    .tab-menu button.active {
-      color: #111111;
-    }
-
-    .tab-menu button.active::after {
-      width: 100%;
-    }
+    .tab-menu button.active { color: #111111; }
+    .tab-menu button.active::after { width: 100%; }
 
     .tab-section {
       margin-top: 1.5rem;
@@ -333,10 +210,7 @@
       max-height: 0;
       overflow: hidden;
       pointer-events: none;
-      transition:
-        opacity 0.4s ease,
-        transform 0.4s ease,
-        max-height 0.45s ease;
+      transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.45s ease;
     }
 
     .tab-section.active {
@@ -346,74 +220,161 @@
       pointer-events: auto;
     }
 
-    /* ---------- LIGHTBOX FOR PORTFOLIO IMAGES ---------- */
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      z-index: 50;
-    }
-
-    .lightbox.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .lightbox-inner {
-      max-width: 90vw;
-      max-height: 90vh;
-    }
-
-    .lightbox-inner img {
+    /* ---------- SKILLS MATRIX TABLE ---------- */
+    .table-wrap {
       width: 100%;
-      height: auto;
+      overflow-x: auto;
+      border: 1px solid #E1DBD0;
       border-radius: 0.8rem;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+      background: #F9F7F2;
     }
 
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 26px;
-      color: #F5F3EE;
-      font-size: 1.8rem;
+    table.matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      font-size: 0.92rem;
+    }
+
+    .matrix thead th {
+      position: sticky;
+      top: 0;
+      background: #F5F3EE;
+      border-bottom: 1px solid #D5D0C5;
+      color: #5A5448;
+      font-weight: 600;
+      padding: 0.8rem 0.8rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .matrix tbody td {
+      border-top: 1px solid #ECE6DB;
+      padding: 0.75rem 0.8rem;
+      vertical-align: top;
+    }
+
+    .matrix tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .matrix tbody tr.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dot {
+      font-size: 1.05rem;
+      line-height: 1;
+      color: #111111;
+    }
+
+    .muted { color: #6F6A5F; }
+
+    /* ---------- CONTACT ---------- */
+    .contact-intro { text-align: center; margin-bottom: 1.4rem; }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid #C3B8A5;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #FDFBF6;
       cursor: pointer;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    .gallery img {
-      cursor: zoom-in;
+    .contact-form {
+      background: #F9F7F2;
+      border-radius: 0.8rem;
+      border: 1px solid #E1DBD0;
+      padding: 1.8rem 1.6rem;
+      display: grid;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .form-row { display: flex; flex-direction: column; gap: 0.35rem; }
+
+    label { font-size: 0.9rem; color: #5A5448; }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid #D5D0C5;
+      background: #FDFBF6;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 0.4rem;
+    }
+
+    .checkbox-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      font-size: 0.85rem;
+      color: #5A5448;
+      margin-top: 0.4rem;
+    }
+
+    .checkbox-row input[type="checkbox"] { margin-top: 0.2rem; }
+
+    .form-actions {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .contact-portrait-wrapper {
+      margin: 1.6rem auto 0;
+      max-width: 260px;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #E1DBD0;
+      background: #F9F7F2;
     }
 
     @media (max-width: 800px) {
-      header {
-        padding: 3rem 7vw 1.8rem;
-      }
-      main {
-        padding: 0 7vw 3rem;
-      }
-      .grid-2 {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .form-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .phone-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      header { padding: 3rem 7vw 1.8rem; }
+      main { padding: 0 7vw 3rem; }
+      .grid-2 { grid-template-columns: minmax(0,1fr); }
+      .form-grid { grid-template-columns: minmax(0, 1fr); }
+      .phone-row { grid-template-columns: minmax(0, 1fr); }
+      table.matrix { min-width: 880px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER / HERO -->
   <header>
     <h1>BLAKE CONSULTANCY</h1>
     <p class="lede">
@@ -423,17 +384,17 @@
   </header>
 
   <main>
-    <!-- TAB MENU -->
     <div class="tab-menu">
       <button class="active" data-tab="overview">Overview</button>
       <button data-tab="services">Services</button>
       <button data-tab="experience">Experience</button>
       <button data-tab="portfolio">Portfolio</button>
       <button data-tab="references">References</button>
+      <button data-tab="skills">Skills Matrix</button>
       <button data-tab="contact">Contact</button>
     </div>
 
-    <!-- TAB 1: OVERVIEW -->
+    <!-- OVERVIEW -->
     <section id="overview" class="tab-section active">
       <h2>Overview</h2>
       <div class="grid-2">
@@ -481,7 +442,7 @@
       </ul>
     </section>
 
-    <!-- TAB 2: SERVICES -->
+    <!-- SERVICES -->
     <section id="services" class="tab-section">
       <h2>Services</h2>
       <div class="grid-2">
@@ -514,16 +475,16 @@
       </div>
     </section>
 
-    <!-- TAB 3: EXPERIENCE -->
+    <!-- EXPERIENCE -->
     <section id="experience" class="tab-section">
-      <h2>Sample Experience</h2>
+      <h2>Experience</h2>
       <p>Selected organisations and the core scope of work delivered:</p>
       <div class="card">
         <p><strong>Atmosphere Core</strong> — Group reputation management, strategic advisory, CSR, brand positioning, AI innovation for media ROI, and all consumer communications across a growing international portfolio of resorts</p>
         <p><strong>JA Resorts &amp; Hotels</strong> — 9x resort marketing communications, asset repositioning, crisis communications, corporate trade event planning and stand design and manufacture, additional live sales events, PR, VR and SMS marketing innovation, campaign leadership and sales alignment</p>
         <p><strong>COMO Hotels &amp; Resorts</strong> — 2x resort cluster sales, crisis communications, VIP sales and media entertainment, global salesforce support and communications advisory</p>
         <p><strong>Marriott International</strong> — Corporate support throughout investment and build programme, B2B launch for investor/developer and brand campaigning</p>
-        <p><strong>ACCOR</strong> — 5x portfolio hotels, storytelling and regional media relations throughout Thailand, reporting directly to ownership</p>
+        <p><strong>ACCOR</strong> — 5x portfolio storytelling and regional media relations throughout Thailand, reporting directly to ownership</p>
         <p><strong>Westfield</strong> — Pre-construction and build programme advisory for the development of East London &amp; Westfield Shopping Centre connected to the London Olympics, retail destination campaigns and placemaking messaging</p>
         <p><strong>Sekisui House</strong> — Corporate reputation management, conception of project brand and story narratives for two of the largest mixed-use developments in Sydney, crisis communications supporting regional “dis-investment” and creation of master-planning narratives</p>
         <p><strong>Silverstein Properties</strong> — Development branding, stakeholder communications, rebranding and repositioning of an asset in Eastern Europe for a renowned NYC-based real estate firm</p>
@@ -537,12 +498,11 @@
       </div>
     </section>
 
-    <!-- TAB 4: PORTFOLIO -->
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="tab-section">
       <h2>Portfolio</h2>
       <p>Illustrative selection of hotel and resort assets supported.</p>
       <div class="gallery">
-        <!-- JA Resorts & Hotels -->
         <figure class="card">
           <img src="images/JA Hatta Fort, UAE.jpg" alt="JA Hatta Fort, UAE">
           <figcaption>JA Hatta Fort, UAE</figcaption>
@@ -568,7 +528,6 @@
           <figcaption>JA Manafaru, Maldives</figcaption>
         </figure>
 
-        <!-- COMO -->
         <figure class="card">
           <img src="images/COMO Cocoa Island, Maldives.jpg" alt="COMO Cocoa Island, Maldives">
           <figcaption>COMO Cocoa Island, Maldives</figcaption>
@@ -578,7 +537,6 @@
           <figcaption>COMO Maalifushi, Maldives</figcaption>
         </figure>
 
-        <!-- Other flagship assets -->
         <figure class="card">
           <img src="images/W Hotel, London.jpg" alt="W Hotel, London">
           <figcaption>W Hotel, London</figcaption>
@@ -608,7 +566,6 @@
           <figcaption>The Stones, Bali</figcaption>
         </figure>
 
-        <!-- Atmosphere / OBLU / OZEN -->
         <figure class="card">
           <img src="images/OBLU SELECT Lobigili.jpeg" alt="OBLU SELECT Lobigili">
           <figcaption>OBLU SELECT Lobigili</figcaption>
@@ -625,10 +582,13 @@
           <img src="images/OBLU Xperience, Maldives.jpeg" alt="OBLU Xperience, Maldives">
           <figcaption>OBLU Xperience, Maldives</figcaption>
         </figure>
+
+        <!-- UPDATED NAME (was Atmosphere Kanifushi, Maldivesjpeg.jpeg) -->
         <figure class="card">
-          <img src="images/Atmosphere Kanifushi, Maldivesjpeg.jpeg" alt="Atmosphere Kanifushi, Maldives">
+          <img src="images/Atmosphere Kanifushi, Maldives.jpeg" alt="Atmosphere Kanifushi, Maldives">
           <figcaption>Atmosphere Kanifushi, Maldives</figcaption>
         </figure>
+
         <figure class="card">
           <img src="images/VARU by Atmosphere.jpeg" alt="VARU by Atmosphere">
           <figcaption>VARU by Atmosphere</figcaption>
@@ -648,7 +608,7 @@
       </div>
     </section>
 
-    <!-- TAB 5: REFERENCES -->
+    <!-- REFERENCES -->
     <section id="references" class="tab-section">
       <h2>References</h2>
       <p class="smallcaps-note">
@@ -657,13 +617,13 @@
 
       <div class="testimonial">
         <h3>JLL / JLL Hotels</h3>
-        <p>“On behalf of the Americas Corporate Solutions and Public Relations teams, I would like to thank you for your efforts in obtaining broadcast coverage for the September 11 document. Please accept this gift as an expression of our appreciation of your dedication and excellent work in generating cross-border coverage.”</p>
+        <p>“Thank you for your dedication and excellent work in generating cross-border broadcast coverage. This achievement required collaboration with multiple regional teams and helped raise visibility internationally. Your efforts were acknowledged at the highest level, resulting in a rare letter of recognition from the Americas leadership team. Your professionalism and quality of work made a marked impression. We deeply appreciated your contribution.”</p>
         <p class="attribution">— Gayle Kanto, Global Director Corporate Communications</p>
       </div>
 
       <div class="testimonial">
         <h3>COMO Hotels</h3>
-        <p>“Euan has shown dedication and tenacity to go out and seek new business… he has shown a depth and breadth of skills transcending the wider business development needs... without doubt, he has first-class communication skills and works independently to ensure the job gets done. His creativity, solid research capability and problem-solving are among his greatest professional traits. He has my highest recommendation as a tremendous asset to any company.”</p>
+        <p>“Euan has shown dedication and tenacity to go out and seek new business… he has shown a depth and breadth of skills transcending the wider business development needs of the business. Without doubt, he has first-class communication skills and works independently to ensure the job gets done. His creativity, solid research capability and problem-solving are among his greatest professional traits. He has my highest recommendation as a tremendous asset to any company.”</p>
         <p class="attribution">— Pietro Addis, Regional General Manager</p>
       </div>
 
@@ -692,118 +652,300 @@
       </div>
     </section>
 
-    <!-- TAB 6: CONTACT -->
+    <!-- SKILLS MATRIX (from Service Matrix.docx) -->
+    <section id="skills" class="tab-section">
+      <h2>Skills Matrix</h2>
+      <p class="muted">Multi-disciplinary experience across clients and the marketing mix.</p>
+
+      <div class="table-wrap" aria-label="Client Service Skills Matrix">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Employment</th>
+              <th>Client</th>
+              <th>Description</th>
+              <th>Sector</th>
+              <th>Marketing</th>
+              <th>Sales</th>
+              <th>Media</th>
+              <th>Brand Audit</th>
+              <th>Research</th>
+              <th>Creative</th>
+              <th>Events</th>
+              <th>Filming</th>
+              <th>Crisis</th>
+              <th>Community</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In-House</td>
+              <td>Atmosphere Core</td>
+              <td>Leader in Maldives Resorts</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>JA Resorts and Hotels</td>
+              <td>GCC leader in hospitality</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td>
+            </tr>
+            <tr>
+              <td>Independent Consultant</td>
+              <td>D-Marin</td>
+              <td>Global leader in exclusive lifestyle marinas</td>
+              <td>Luxury Marina Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>Marriott International</td>
+              <td>Global leader in hospitality</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>ACCOR</td>
+              <td>Global leader in hospitality</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>COMO Hotels and Resorts</td>
+              <td>Global leading high-end boutique hotelier</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Agency Consultant</td>
+              <td>Semer Holdings</td>
+              <td>Senegal Diamandio Lake City (Akon City)</td>
+              <td>Mixed Use</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Sekisui House</td>
+              <td>World's #1 Housing Developer</td>
+              <td>Residential Masterplanning</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Kennedy Wilson</td>
+              <td>$25BN Assets Under Management</td>
+              <td>Town Centre Retail Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Hermes Investment</td>
+              <td>$669BN Assets Under Management</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Henderson Global Investors</td>
+              <td>$287BN Assets Under Management</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Silverstein Properties</td>
+              <td>Owners of Twin Towers NYC</td>
+              <td>Luxury Retail &amp; Offices</td>
+              <td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Land Securities</td>
+              <td>£10.2BN / 24.6m SqM Portfolio</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Bouygues</td>
+              <td>Multi-national conglomerate</td>
+              <td>Residential Masterplanning</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Guildford Borough Council</td>
+              <td>UK Local Government Council</td>
+              <td>Town Centre Masterplanning</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>MARK</td>
+              <td>€7BN Under Asset Management</td>
+              <td>Mixed Use</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>CBRE</td>
+              <td>#122 Out of Top Fortune</td>
+              <td>Retail</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td class="dot">⦿</td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Westfield</td>
+              <td>Global Leader In Shopping Malls</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Independent Consultant</td>
+              <td>Lands Improvement Holdings</td>
+              <td>£9BN Portfolio / 15,000 Properties</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>In-House &amp; Independent Consultant</td>
+              <td>McAleer &amp; Rushe</td>
+              <td>313m SqM In Development</td>
+              <td>Hotels / Mixed Use</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House, Agency &amp; Consultant</td>
+              <td>Jones Lang LaSalle &amp; JLL Hotels</td>
+              <td>#190 Out of Top Fortune</td>
+              <td>Residential / Luxury Hotels</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>McLean Homes (Now Taylor Wimpey)</td>
+              <td>Residential</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Taylor Wimpey</td>
+              <td>UK's leading housebuilder (FTSE 100 Index)</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="tab-section">
-      <section class="contact-block">
-        <div class="contact-intro">
-          <h2>Contact</h2>
-          <p>For consultancy engagements, project discussions or speaking opportunities, please complete the form below.</p>
+      <div class="contact-intro">
+        <h2>Contact</h2>
+        <p>For consultancy engagements, project discussions or speaking opportunities, please complete the form below.</p>
+
+        <div class="contact-actions">
+          <button class="button" type="button" id="downloadOverview">Overview (Download)</button>
+          <a class="button" href="mailto:euan@blakeconsultancy.io">Email</a>
         </div>
+      </div>
 
-        <!-- Feedback form -->
-        <form
-          class="contact-form"
-          action="mailto:euan@blakeconsultancy.io"
-          method="POST"
-          enctype="text/plain"
-        >
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="first-name">First name</label>
-              <input type="text" id="first-name" name="First name" required />
-            </div>
-
-            <div class="form-row">
-              <label for="surname">Surname</label>
-              <input type="text" id="surname" name="Surname" required />
-            </div>
-
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="Email" required />
-            </div>
-
-            <div class="form-row">
-              <label for="phone">Phone</label>
-              <div class="phone-row">
-                <select id="country-code" name="Country code" required>
-                  <option value="+44">UK (+44)</option>
-                  <option value="+1">USA / Canada (+1)</option>
-                  <option value="+61">Australia (+61)</option>
-                  <option value="+971">UAE (+971)</option>
-                  <option value="+91">India (+91)</option>
-                  <option value="+94">Sri Lanka (+94)</option>
-                  <option value="+960">Maldives (+960)</option>
-                  <option value="+65">Singapore (+65)</option>
-                  <option value="+66">Thailand (+66)</option>
-                  <option value="+353">Ireland (+353)</option>
-                  <option value="+33">France (+33)</option>
-                  <option value="+49">Germany (+49)</option>
-                  <option value="+39">Italy (+39)</option>
-                  <option value="+34">Spain (+34)</option>
-                  <option value="+852">Hong Kong (+852)</option>
-                  <option value="+81">Japan (+81)</option>
-                  <option value="+86">China (+86)</option>
-                  <option value="+64">New Zealand (+64)</option>
-                  <option value="other">Other</option>
-                </select>
-                <input
-                  type="text"
-                  id="phone"
-                  name="Phone number"
-                  placeholder="Phone number"
-                  required
-                />
-              </div>
-            </div>
+      <form
+        class="contact-form"
+        action="mailto:euan@blakeconsultancy.io"
+        method="POST"
+        enctype="text/plain"
+      >
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="First name" required />
           </div>
 
           <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" required></textarea>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="Surname" required />
           </div>
 
-          <div class="checkbox-row">
-            <input
-              type="checkbox"
-              id="consent"
-              name="Consent to further information"
-              value="Yes"
-            />
-            <label for="consent">
-              I agree to receive further information from Euan Blake.
-            </label>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required />
           </div>
 
-          <div class="form-actions">
-            <button type="submit" class="button">Send enquiry</button>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <div class="phone-row">
+              <select id="country-code" name="Country code" required>
+                <option value="+44">UK (+44)</option>
+                <option value="+1">USA / Canada (+1)</option>
+                <option value="+61">Australia (+61)</option>
+                <option value="+971">UAE (+971)</option>
+                <option value="+91">India (+91)</option>
+                <option value="+94">Sri Lanka (+94)</option>
+                <option value="+960">Maldives (+960)</option>
+                <option value="+65">Singapore (+65)</option>
+                <option value="+66">Thailand (+66)</option>
+                <option value="+353">Ireland (+353)</option>
+                <option value="+33">France (+33)</option>
+                <option value="+49">Germany (+49)</option>
+                <option value="+39">Italy (+39)</option>
+                <option value="+34">Spain (+34)</option>
+                <option value="+852">Hong Kong (+852)</option>
+                <option value="+81">Japan (+81)</option>
+                <option value="+86">China (+86)</option>
+                <option value="+64">New Zealand (+64)</option>
+                <option value="other">Other</option>
+              </select>
+              <input
+                type="text"
+                id="phone"
+                name="Phone number"
+                placeholder="Phone number"
+                required
+              />
+            </div>
           </div>
-        </form>
-
-        <!-- Portrait image -->
-        <div class="contact-portrait-wrapper">
-          <img
-            src="images/Profile.BW.jpg"
-            alt="Portrait of Euan Blake"
-            class="contact-portrait"
-          />
         </div>
-      </section>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" required></textarea>
+        </div>
+
+        <div class="checkbox-row">
+          <input
+            type="checkbox"
+            id="consent"
+            name="Consent to further information"
+            value="Yes"
+          />
+          <label for="consent">
+            I agree to receive further information and updates from Euan Blake.
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="button">Send enquiry</button>
+        </div>
+      </form>
+
+      <!-- NEW CONTACT IMAGE -->
+      <div class="contact-portrait-wrapper">
+        <img src="images/IMG_0981.JPG" alt="Portrait" />
+      </div>
     </section>
 
   </main>
 
   <footer>
-    &copy; 2025 Blake Consultancy  |  mail: euan@blakeconsultancy.io  |  WA: +995591031637  |  All rights reserved.
+    &copy; 2025 Blake Consultancy. All rights reserved.
   </footer>
-
-  <!-- LIGHTBOX OVERLAY -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-inner">
-      <img src="" alt="" id="lightbox-img">
-    </div>
-    <div class="lightbox-close" id="lightbox-close">&times;</div>
-  </div>
 
   <script>
     // Tabs
@@ -822,45 +964,62 @@
         });
 
         const headerHeight = document.querySelector("header").offsetHeight;
-        window.scrollTo({
-          top: headerHeight - 10,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: headerHeight - 10, behavior: "smooth" });
+
+        // If switching to skills tab, trigger reveal
+        if (tab === "skills") revealMatrixRows();
       });
     });
 
-    // Lightbox for portfolio images
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxClose = document.getElementById("lightbox-close");
-    const galleryImages = document.querySelectorAll(".gallery img");
-
-    galleryImages.forEach(img => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add("active");
+    // Skills matrix row reveal (light animation)
+    function revealMatrixRows() {
+      const rows = document.querySelectorAll(".matrix tbody tr");
+      rows.forEach((row, i) => {
+        setTimeout(() => row.classList.add("reveal"), 40 * i);
       });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
     }
 
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox || e.target === lightboxClose) {
-        closeLightbox();
-      }
+    // Overview download button
+    document.getElementById("downloadOverview").addEventListener("click", () => {
+      const overviewText =
+`BLAKE CONSULTANCY – OVERVIEW
+
+Global marketing communications for hotel assets, new leisure developments and tactical repositioning for value discovery.
+Senior advisory and campaign leadership across luxury hospitality, resorts and destination brands.
+
+CORE COMPETENCIES
+- Integrated global communications strategy
+- Brand positioning & narrative creation
+- Cross-market campaign leadership
+- Luxury hospitality & destination marketing
+- Multi-channel activation (earned / paid / owned / social)
+- Crisis communications & reputation management
+- CSR, ESG, sustainability & NGO partnerships
+- Investor and corporate communications
+
+CONTACT
+euan@blakeconsultancy.io
+`;
+
+      const blob = new Blob([overviewText], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Blake_Consultancy_Overview.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.classList.contains("active")) {
-        closeLightbox();
-      }
-    });
+    // If user lands on Skills Matrix first (rare), reveal safely
+    if (document.getElementById("skills")?.classList.contains("active")) {
+      revealMatrixRows();
+    }
   </script>
 
 </body>
 </html>
+
