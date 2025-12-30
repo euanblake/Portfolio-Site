@@ -266,6 +266,63 @@
     .dot { font-size: 1.05rem; line-height: 1; color: #111111; }
     .muted { color: #6F6A5F; }
 
+    /* ---------- MOBILE SKILLS CARDS ---------- */
+    .matrix-cards {
+      display: none;
+      margin-top: 1rem;
+      gap: 0.9rem;
+    }
+
+    .matrix-card {
+      background: #F9F7F2;
+      border: 1px solid #E1DBD0;
+      border-radius: 0.8rem;
+      padding: 1.1rem 1.2rem;
+    }
+
+    .matrix-card .topline {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .matrix-card .topline strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+    }
+
+    .matrix-card .topline span {
+      color: #6F6A5F;
+      font-size: 0.9rem;
+    }
+
+    .matrix-card .desc {
+      color: #5A5448;
+      margin: 0.35rem 0 0.65rem;
+      font-size: 0.95rem;
+    }
+
+    .matrix-pillwrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+    }
+
+    .matrix-pill {
+      font-size: 0.82rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #D5D0C5;
+      color: #6F6A5F;
+      background: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+
     /* ---------- CONTACT ---------- */
     .contact-intro { text-align: center; margin-bottom: 1.4rem; }
 
@@ -362,16 +419,31 @@
       display: block;
     }
 
+    /* ---------- LAZY FADE-IN ---------- */
+    .lazy-fade {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .lazy-fade.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 800px) {
       header { padding: 3rem 7vw 1.8rem; }
       main { padding: 0 7vw 3rem; }
       .grid-2 { grid-template-columns: minmax(0,1fr); }
       .form-grid { grid-template-columns: minmax(0, 1fr); }
       .phone-row { grid-template-columns: minmax(0, 1fr); }
-      table.matrix { min-width: 880px; }
+
+      /* switch skills matrix to cards */
+      .table-wrap { display: none; }
+      .matrix-cards { display: grid; }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -502,116 +574,41 @@
       <h2>Portfolio</h2>
       <p>Illustrative selection of hotel and resort assets supported.</p>
       <div class="gallery">
-        <figure class="card">
-          <img src="images/JA Hatta Fort, UAE.jpg" alt="JA Hatta Fort, UAE">
-          <figcaption>JA Hatta Fort, UAE</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/JA Ocean View, Dubai.jpg" alt="JA Ocean View, Dubai">
-          <figcaption>JA Ocean View, Dubai</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/JA The Resort, Dubai.jpg" alt="JA The Resort, Dubai">
-          <figcaption>JA The Resort, Dubai</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/JA Waterfront, Seychelles.jpg" alt="JA Waterfront, Seychelles">
-          <figcaption>JA Waterfront, Seychelles</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/JA Enchanted Island, Seychelles.jpg" alt="JA Enchanted Island, Seychelles">
-          <figcaption>JA Enchanted Island, Seychelles</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/JA Manafaru, Maldives.jpg" alt="JA Manafaru, Maldives">
-          <figcaption>JA Manafaru, Maldives</figcaption>
-        </figure>
+        <figure class="card"><img src="images/JA Hatta Fort, UAE.jpg" alt="JA Hatta Fort, UAE"><figcaption>JA Hatta Fort, UAE</figcaption></figure>
+        <figure class="card"><img src="images/JA Ocean View, Dubai.jpg" alt="JA Ocean View, Dubai"><figcaption>JA Ocean View, Dubai</figcaption></figure>
+        <figure class="card"><img src="images/JA The Resort, Dubai.jpg" alt="JA The Resort, Dubai"><figcaption>JA The Resort, Dubai</figcaption></figure>
+        <figure class="card"><img src="images/JA Waterfront, Seychelles.jpg" alt="JA Waterfront, Seychelles"><figcaption>JA Waterfront, Seychelles</figcaption></figure>
+        <figure class="card"><img src="images/JA Enchanted Island, Seychelles.jpg" alt="JA Enchanted Island, Seychelles"><figcaption>JA Enchanted Island, Seychelles</figcaption></figure>
+        <figure class="card"><img src="images/JA Manafaru, Maldives.jpg" alt="JA Manafaru, Maldives"><figcaption>JA Manafaru, Maldives</figcaption></figure>
 
-        <figure class="card">
-          <img src="images/COMO Cocoa Island, Maldives.jpg" alt="COMO Cocoa Island, Maldives">
-          <figcaption>COMO Cocoa Island, Maldives</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/COMO Maalifushi, Maldives.jpg" alt="COMO Maalifushi, Maldives">
-          <figcaption>COMO Maalifushi, Maldives</figcaption>
-        </figure>
+        <figure class="card"><img src="images/COMO Cocoa Island, Maldives.jpg" alt="COMO Cocoa Island, Maldives"><figcaption>COMO Cocoa Island, Maldives</figcaption></figure>
+        <figure class="card"><img src="images/COMO Maalifushi, Maldives.jpg" alt="COMO Maalifushi, Maldives"><figcaption>COMO Maalifushi, Maldives</figcaption></figure>
 
-        <figure class="card">
-          <img src="images/W Hotel, London.jpg" alt="W Hotel, London">
-          <figcaption>W Hotel, London</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/Novotel Hua Hin, Thailand.jpg" alt="Novotel Hua Hin, Thailand">
-          <figcaption>Novotel Hua Hin, Thailand</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/Novotel Surin, Phuket.jpg" alt="Novotel Surin, Phuket">
-          <figcaption>Novotel Surin, Phuket</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/Novotel Karon, Phuket.jpg" alt="Novotel Karon, Phuket">
-          <figcaption>Novotel Karon, Phuket</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/Swissotel Kamala, Phuket.jpg" alt="Swissotel Kamala, Phuket">
-          <figcaption>Swissotel Kamala, Phuket</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/Swissotel Patong, Phuket.jpg" alt="Swissotel Patong, Phuket">
-          <figcaption>Swissotel Patong, Phuket</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/The Stones, Bali.jpg" alt="The Stones, Bali">
-          <figcaption>The Stones, Bali</figcaption>
-        </figure>
+        <figure class="card"><img src="images/W Hotel, London.jpg" alt="W Hotel, London"><figcaption>W Hotel, London</figcaption></figure>
+        <figure class="card"><img src="images/Novotel Hua Hin, Thailand.jpg" alt="Novotel Hua Hin, Thailand"><figcaption>Novotel Hua Hin, Thailand</figcaption></figure>
+        <figure class="card"><img src="images/Novotel Surin, Phuket.jpg" alt="Novotel Surin, Phuket"><figcaption>Novotel Surin, Phuket</figcaption></figure>
+        <figure class="card"><img src="images/Novotel Karon, Phuket.jpg" alt="Novotel Karon, Phuket"><figcaption>Novotel Karon, Phuket</figcaption></figure>
+        <figure class="card"><img src="images/Swissotel Kamala, Phuket.jpg" alt="Swissotel Kamala, Phuket"><figcaption>Swissotel Kamala, Phuket</figcaption></figure>
+        <figure class="card"><img src="images/Swissotel Patong, Phuket.jpg" alt="Swissotel Patong, Phuket"><figcaption>Swissotel Patong, Phuket</figcaption></figure>
+        <figure class="card"><img src="images/The Stones, Bali.jpg" alt="The Stones, Bali"><figcaption>The Stones, Bali</figcaption></figure>
 
-        <figure class="card">
-          <img src="images/OBLU SELECT Lobigili.jpeg" alt="OBLU SELECT Lobigili">
-          <figcaption>OBLU SELECT Lobigili</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/OBLU Select Sangeli.jpeg" alt="OBLU Select Sangeli">
-          <figcaption>OBLU Select Sangeli</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/OBLU Nature Helengeli, Maldives.jpeg" alt="OBLU Nature Helengeli, Maldives">
-          <figcaption>OBLU Nature Helengeli, Maldives</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/OBLU Xperience, Maldives.jpeg" alt="OBLU Xperience, Maldives">
-          <figcaption>OBLU Xperience, Maldives</figcaption>
-        </figure>
+        <figure class="card"><img src="images/OBLU SELECT Lobigili.jpeg" alt="OBLU SELECT Lobigili"><figcaption>OBLU SELECT Lobigili</figcaption></figure>
+        <figure class="card"><img src="images/OBLU Select Sangeli.jpeg" alt="OBLU Select Sangeli"><figcaption>OBLU Select Sangeli</figcaption></figure>
+        <figure class="card"><img src="images/OBLU Nature Helengeli, Maldives.jpeg" alt="OBLU Nature Helengeli, Maldives"><figcaption>OBLU Nature Helengeli, Maldives</figcaption></figure>
+        <figure class="card"><img src="images/OBLU Xperience, Maldives.jpeg" alt="OBLU Xperience, Maldives"><figcaption>OBLU Xperience, Maldives</figcaption></figure>
 
-        <figure class="card">
-          <img src="images/Atmosphere Kanifushi, Maldives.jpeg" alt="Atmosphere Kanifushi, Maldives">
-          <figcaption>Atmosphere Kanifushi, Maldives</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="images/VARU by Atmosphere.jpeg" alt="VARU by Atmosphere">
-          <figcaption>VARU by Atmosphere</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/RAAYA By Atmosphere, Maldives.jpeg" alt="RAAYA By Atmosphere, Maldives">
-          <figcaption>RAAYA By Atmosphere, Maldives</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/OZEN Maadhoo, Maldives.jpeg" alt="OZEN Maadhoo, Maldives">
-          <figcaption>OZEN Maadhoo, Maldives</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="images/OZEN Bolifushi, Maldives.jpeg" alt="OZEN Bolifushi, Maldives">
-          <figcaption>OZEN Bolifushi, Maldives</figcaption>
-        </figure>
+        <figure class="card"><img src="images/Atmosphere Kanifushi, Maldives.jpeg" alt="Atmosphere Kanifushi, Maldives"><figcaption>Atmosphere Kanifushi, Maldives</figcaption></figure>
+        <figure class="card"><img src="images/VARU by Atmosphere.jpeg" alt="VARU by Atmosphere"><figcaption>VARU by Atmosphere</figcaption></figure>
+        <figure class="card"><img src="images/RAAYA By Atmosphere, Maldives.jpeg" alt="RAAYA By Atmosphere, Maldives"><figcaption>RAAYA By Atmosphere, Maldives</figcaption></figure>
+        <figure class="card"><img src="images/OZEN Maadhoo, Maldives.jpeg" alt="OZEN Maadhoo, Maldives"><figcaption>OZEN Maadhoo, Maldives</figcaption></figure>
+        <figure class="card"><img src="images/OZEN Bolifushi, Maldives.jpeg" alt="OZEN Bolifushi, Maldives"><figcaption>OZEN Bolifushi, Maldives</figcaption></figure>
       </div>
     </section>
 
     <!-- REFERENCES -->
     <section id="references" class="tab-section">
       <h2>References</h2>
-      <p class="smallcaps-note">
-        comments are abbreviated and full reference letters are available on request.
-      </p>
+      <p class="smallcaps-note">comments are abbreviated and full reference letters are available on request.</p>
 
       <div class="testimonial">
         <h3>JLL / JLL Hotels</h3>
@@ -655,8 +652,9 @@
       <h2>Skills Matrix</h2>
       <p class="muted">Multi-disciplinary experience across clients and the marketing mix.</p>
 
+      <!-- Desktop/tablet table -->
       <div class="table-wrap" aria-label="Client Service Skills Matrix">
-        <table class="matrix">
+        <table class="matrix" id="skillsTable">
           <thead>
             <tr>
               <th>Employment</th>
@@ -676,7 +674,6 @@
             </tr>
           </thead>
           <tbody>
-            <!-- (your existing rows preserved exactly as provided) -->
             <tr>
               <td>In-House</td>
               <td>Atmosphere Core</td>
@@ -691,10 +688,161 @@
               <td>Luxury Hotel Operations</td>
               <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td>
             </tr>
-            <!-- ... keep the rest of your matrix rows as-is ... -->
+            <tr>
+              <td>Independent Consultant</td>
+              <td>D-Marin</td>
+              <td>Global leader in exclusive lifestyle marinas</td>
+              <td>Luxury Marina Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>Marriott International</td>
+              <td>Global leader in hospitality</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>ACCOR</td>
+              <td>Global leader in hospitality</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House</td>
+              <td>COMO Hotels and Resorts</td>
+              <td>Global leading high-end boutique hotelier</td>
+              <td>Luxury Hotel Operations</td>
+              <td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+
+            <!-- keep the rest of your rows as-is -->
+            <tr>
+              <td>Agency Consultant</td>
+              <td>Semer Holdings</td>
+              <td>Senegal Diamandio Lake City (Akon City)</td>
+              <td>Mixed Use</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Sekisui House</td>
+              <td>World's #1 Housing Developer</td>
+              <td>Residential Masterplanning</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Kennedy Wilson</td>
+              <td>$25BN Assets Under Management</td>
+              <td>Town Centre Retail Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Hermes Investment</td>
+              <td>$669BN Assets Under Management</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Henderson Global Investors</td>
+              <td>$287BN Assets Under Management</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Silverstein Properties</td>
+              <td>Owners of Twin Towers NYC</td>
+              <td>Luxury Retail &amp; Offices</td>
+              <td class="dot">⦿</td><td></td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Land Securities</td>
+              <td>£10.2BN / 24.6m SqM Portfolio</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Bouygues</td>
+              <td>Multi-national conglomerate</td>
+              <td>Residential Masterplanning</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Guildford Borough Council</td>
+              <td>UK Local Government Council</td>
+              <td>Town Centre Masterplanning</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>MARK</td>
+              <td>€7BN Under Asset Management</td>
+              <td>Mixed Use</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>CBRE</td>
+              <td>#122 Out of Top Fortune</td>
+              <td>Retail</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td class="dot">⦿</td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Westfield</td>
+              <td>Global Leader In Shopping Malls</td>
+              <td>Luxury Shopping Malls</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Independent Consultant</td>
+              <td>Lands Improvement Holdings</td>
+              <td>£9BN Portfolio / 15,000 Properties</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>In-House &amp; Independent Consultant</td>
+              <td>McAleer &amp; Rushe</td>
+              <td>313m SqM In Development</td>
+              <td>Hotels / Mixed Use</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>In-House, Agency &amp; Consultant</td>
+              <td>Jones Lang LaSalle &amp; JLL Hotels</td>
+              <td>#190 Out of Top Fortune</td>
+              <td>Residential / Luxury Hotels</td>
+              <td></td><td></td><td class="dot">⦿</td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>McLean Homes (Now Taylor Wimpey)</td>
+              <td>Residential</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
+            <tr>
+              <td>Integrated Agency</td>
+              <td>Taylor Wimpey</td>
+              <td>UK's leading housebuilder (FTSE 100 Index)</td>
+              <td>Residential</td>
+              <td class="dot">⦿</td><td></td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td><td class="dot">⦿</td><td></td><td></td><td class="dot">⦿</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      <!-- Mobile cards (generated from the table via JS) -->
+      <div class="matrix-cards" id="skillsCards" aria-label="Skills Matrix (Mobile Cards)"></div>
     </section>
 
     <!-- CONTACT -->
@@ -707,7 +855,6 @@
           <button class="button" type="button" id="downloadOverview">Overview (Download)</button>
           <a class="button" href="mailto:euan@blakeconsultancy.io">Email</a>
         </div>
-        <p id="downloadStatus" class="muted" style="margin-top:0.5rem;"></p>
       </div>
 
       <form
@@ -790,7 +937,8 @@
       </form>
 
       <div class="contact-portrait-wrapper">
-        <img id="portraitImg" src="" alt="Portrait of Euan Blake">
+        <!-- IMPORTANT: JS will validate + swap to a working filename if needed -->
+        <img id="portraitImg" src="images/euan-blake.jpg" alt="Portrait of Euan Blake">
       </div>
     </section>
 
@@ -801,25 +949,98 @@
   </footer>
 
   <script>
-    // ----------------------------
-    // CONFIG (paths you care about)
-    // ----------------------------
-    const overviewPdfPath = "downloads/Euan_Blake_Profile.pdf"; // must exist in repo
-    const portraitPath = "images/euan-blake.JPG"; // put your photo here (exact filename)
+    /*****************************************************************
+     * CONFIG (update these paths if you rename files in GitHub)
+     *****************************************************************/
+    const overviewPdfPath = "downloads/Euan_Blake_Profile.pdf"; // confirmed: Files/downloads/Euan_Blake_Profile.pdf
 
-    // Set portrait image reliably
-    (function setPortrait() {
-      const img = document.getElementById("portraitImg");
-      if (!img) return;
-      img.src = portraitPath;
+    // If your portrait filename is different in the repo, add it here (case-sensitive on GitHub Pages).
+    const portraitCandidates = [
+      "images/euan-blake.jpg",
+      "images/Euan-Blake.jpg",
+      "images/euan-blake.jpeg",
+      "images/euan-blake.JPG",
+      "images/IMG_0981.JPG",
+      "images/IMG_0981.jpg"
+    ];
 
-      // Optional: if image missing, show a helpful console message
-      img.onerror = () => {
-        console.warn("Portrait image not found at:", portraitPath);
-      };
+    // Optional fallback if any portfolio images are missing (set "" to simply hide missing tiles).
+    const portfolioFallback = ""; // e.g. "images/placeholder.jpg"
+
+    /*****************************************************************
+     * Small console validator (assets + DOM expectations)
+     *****************************************************************/
+    const SiteValidator = (() => {
+      const prefix = "%cBlakeConsultancy Validator";
+      const badge = "background:#111;color:#F5F3EE;padding:2px 6px;border-radius:6px;font-weight:600;";
+      const warnBadge = "background:#b45309;color:#fff;padding:2px 6px;border-radius:6px;font-weight:600;";
+      const errBadge  = "background:#991b1b;color:#fff;padding:2px 6px;border-radius:6px;font-weight:600;";
+
+      const log = (msg, ...rest) => console.log(prefix, badge, msg, ...rest);
+      const warn = (msg, ...rest) => console.warn(prefix, warnBadge, msg, ...rest);
+      const error = (msg, ...rest) => console.error(prefix, errBadge, msg, ...rest);
+
+      async function checkPdf(path) {
+        try {
+          const res = await fetch(path, { method: "HEAD", cache: "no-store" });
+          if (!res.ok) warn(`PDF not reachable (HTTP ${res.status}). Check path/case: ${path}`);
+          else log(`PDF OK: ${path}`);
+        } catch (e) {
+          warn(`PDF check failed (likely local file or CORS). Still verify path/case: ${path}`);
+        }
+      }
+
+      function checkImages() {
+        const imgs = Array.from(document.querySelectorAll("img"));
+        if (!imgs.length) warn("No <img> tags found.");
+
+        let missing = 0;
+        imgs.forEach(img => {
+          // If it errors later, our onerror handlers will report.
+          if (!img.getAttribute("src")) {
+            missing++;
+            warn("Image missing src:", img);
+          }
+        });
+
+        if (missing === 0) log(`Image tags OK: ${imgs.length} found.`);
+      }
+
+      function checkSkillsMatrix() {
+        const table = document.getElementById("skillsTable");
+        const cards = document.getElementById("skillsCards");
+        if (!table) warn("Skills table not found (#skillsTable).");
+        if (!cards) warn("Skills cards container not found (#skillsCards).");
+        if (table) {
+          const rows = table.querySelectorAll("tbody tr").length;
+          if (rows === 0) warn("Skills table has no rows.");
+          else log(`Skills table rows: ${rows}`);
+        }
+      }
+
+      function checkTabs() {
+        const buttons = document.querySelectorAll(".tab-menu button");
+        const sections = document.querySelectorAll(".tab-section");
+        if (buttons.length === 0) warn("No tab buttons found.");
+        if (sections.length === 0) warn("No tab sections found.");
+        if (buttons.length && sections.length) log(`Tabs OK: ${buttons.length} buttons / ${sections.length} sections`);
+      }
+
+      async function runAll() {
+        log("Running checks…");
+        checkTabs();
+        checkImages();
+        checkSkillsMatrix();
+        await checkPdf(overviewPdfPath);
+        log("Validation complete.");
+      }
+
+      return { runAll, warn, error, log };
     })();
 
-    // Tabs
+    /*****************************************************************
+     * Tabs
+     *****************************************************************/
     const buttons = document.querySelectorAll(".tab-menu button");
     const sections = document.querySelectorAll(".tab-section");
 
@@ -834,14 +1055,19 @@
           sec.classList.toggle("active", sec.id === tab);
         });
 
-        const headerHeight = document.querySelector("header").offsetHeight;
-        window.scrollTo({ top: headerHeight - 10, behavior: "smooth" });
+        const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+        window.scrollTo({ top: Math.max(0, headerHeight - 10), behavior: "smooth" });
 
-        if (tab === "skills") revealMatrixRows();
+        if (tab === "skills") {
+          revealMatrixRows();
+          buildSkillsCardsIfNeeded();
+        }
       });
     });
 
-    // Skills matrix row reveal
+    /*****************************************************************
+     * Skills matrix row reveal (desktop table)
+     *****************************************************************/
     function revealMatrixRows() {
       const rows = document.querySelectorAll(".matrix tbody tr");
       rows.forEach((row, i) => {
@@ -849,63 +1075,208 @@
       });
     }
 
-    // Overview PDF download (with existence check + confirmation)
-    const downloadBtn = document.getElementById("downloadOverview");
-    const downloadStatus = document.getElementById("downloadStatus");
+    /*****************************************************************
+     * Mobile skills matrix: build cards from the table (no duplicate data)
+     *****************************************************************/
+    let skillsCardsBuilt = false;
 
-    function setStatus(msg) {
-      if (downloadStatus) downloadStatus.textContent = msg || "";
+    function buildSkillsCardsIfNeeded() {
+      if (skillsCardsBuilt) return;
+
+      const table = document.getElementById("skillsTable");
+      const cardsWrap = document.getElementById("skillsCards");
+      if (!table || !cardsWrap) return;
+
+      const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+      const capabilityHeaders = headers.slice(4); // Marketing...Community
+      rows.forEach(row => {
+        const cells = Array.from(row.querySelectorAll("td")).map(td => td.textContent.trim());
+
+        const employment = cells[0] || "";
+        const client = cells[1] || "";
+        const description = cells[2] || "";
+        const sector = cells[3] || "";
+
+        const caps = [];
+        for (let i = 4; i < cells.length; i++) {
+          // In your table, dots are "⦿" and blanks are "".
+          if ((cells[i] || "").includes("⦿")) caps.push(capabilityHeaders[i - 4]);
+        }
+
+        const card = document.createElement("div");
+        card.className = "matrix-card lazy-fade";
+        card.innerHTML = `
+          <div class="topline">
+            <strong>${escapeHtml(client)}</strong>
+            <span>${escapeHtml(employment)} · ${escapeHtml(sector)}</span>
+          </div>
+          <div class="desc">${escapeHtml(description)}</div>
+          <div class="matrix-pillwrap">
+            ${caps.length ? caps.map(c => `<span class="matrix-pill">${escapeHtml(c)}</span>`).join("") : `<span class="matrix-pill">—</span>`}
+          </div>
+        `;
+
+        cardsWrap.appendChild(card);
+      });
+
+      skillsCardsBuilt = true;
+      setupLazyFade(); // ensure cards animate in
     }
 
-    async function checkFileExists(url) {
-      // Use HEAD where possible; fall back to GET if HEAD blocked by hosting.
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    /*****************************************************************
+     * PDF download (fixed path + better error message)
+     *****************************************************************/
+    document.getElementById("downloadOverview")?.addEventListener("click", async () => {
+      const ok = window.confirm("Download the Overview PDF now?");
+      if (!ok) return;
+
+      // Validate quickly (best-effort) then open
       try {
-        const head = await fetch(url, { method: "HEAD", cache: "no-store" });
-        if (head.ok) return true;
-        // Some static hosts don't allow HEAD; try a tiny GET
-        const get = await fetch(url, { method: "GET", cache: "no-store" });
-        return get.ok;
-      } catch (e) {
-        return false;
+        const res = await fetch(overviewPdfPath, { method: "HEAD", cache: "no-store" });
+        if (!res.ok) {
+          alert("PDF not found. Please confirm the filename and path:\n" + overviewPdfPath);
+          SiteValidator.warn(`Download blocked: PDF not reachable (HTTP ${res.status})`, overviewPdfPath);
+          return;
+        }
+      } catch (_) {
+        // Ignore if HEAD is blocked; proceed to open anyway.
       }
-    }
 
-    function triggerDownload(url, filename) {
       const a = document.createElement("a");
-      a.href = url;
+      a.href = overviewPdfPath;
       a.target = "_blank";
       a.rel = "noopener";
-      a.download = filename || "";
+      a.download = "Euan_Blake_Profile.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
-    }
+    });
 
-    if (downloadBtn) {
-      downloadBtn.addEventListener("click", async () => {
-        setStatus("");
-        const ok = window.confirm("Download the Overview PDF now?");
-        if (!ok) return;
+    /*****************************************************************
+     * Auto lazy-load images + graceful fallbacks
+     *****************************************************************/
+    function applyLazyLoadDefaults() {
+      const imgs = document.querySelectorAll("img");
+      imgs.forEach(img => {
+        // Native lazy-load hint
+        img.loading = img.loading || "lazy";
+        img.decoding = img.decoding || "async";
 
-        setStatus("Checking file…");
+        // Add fade-in class for intersection observer
+        img.classList.add("lazy-fade");
 
-        const exists = await checkFileExists(overviewPdfPath);
-        if (!exists) {
-          setStatus("PDF not found. Confirm the file is at: " + overviewPdfPath);
-          console.error("PDF not found at:", overviewPdfPath);
-          return;
-        }
+        // Generic missing image handler (portfolio tiles)
+        img.addEventListener("error", () => {
+          const src = img.getAttribute("src") || "";
+          SiteValidator.warn(`Image failed to load: ${src}`);
 
-        setStatus("Opening…");
-        triggerDownload(overviewPdfPath, "Euan_Blake_Profile.pdf");
-        setTimeout(() => setStatus(""), 1200);
+          if (portfolioFallback) {
+            img.src = portfolioFallback;
+            img.alt = img.alt || "Image";
+          } else {
+            // hide the tile cleanly
+            const fig = img.closest("figure");
+            if (fig) fig.style.display = "none";
+            else img.style.display = "none";
+          }
+        }, { once: true });
       });
     }
 
-    // If Skills already active (rare), reveal
-    if (document.getElementById("skills")?.classList.contains("active")) {
-      revealMatrixRows();
+    /*****************************************************************
+     * Fix portrait not displaying:
+     * - tries candidates (case-sensitive) and swaps to first that loads
+     *****************************************************************/
+    async function fixPortrait() {
+      const portrait = document.getElementById("portraitImg");
+      if (!portrait) return;
+
+      // Ensure the portrait doesn't get hidden by generic onerror (we override)
+      portrait.onerror = null;
+
+      for (const candidate of portraitCandidates) {
+        const ok = await testImage(candidate);
+        if (ok) {
+          portrait.src = candidate;
+          portrait.loading = "lazy";
+          portrait.decoding = "async";
+          SiteValidator.log(`Portrait OK: ${candidate}`);
+          return;
+        }
+      }
+
+      SiteValidator.error(
+        "Portrait image not found. Add one of these files (case-sensitive) to /images/:",
+        portraitCandidates
+      );
     }
+
+    function testImage(src) {
+      return new Promise(resolve => {
+        const im = new Image();
+        im.onload = () => resolve(true);
+        im.onerror = () => resolve(false);
+        im.src = src + (src.includes("?") ? "&" : "?") + "v=" + Date.now(); // cache-bust
+      });
+    }
+
+    /*****************************************************************
+     * Intersection Observer: fade-in for images + mobile skill cards
+     *****************************************************************/
+    let fadeObserver;
+    function setupLazyFade() {
+      if (fadeObserver) return;
+
+      const els = document.querySelectorAll(".lazy-fade");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+
+      fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { root: null, threshold: 0.12 });
+
+      els.forEach(el => fadeObserver.observe(el));
+    }
+
+    /*****************************************************************
+     * Init
+     *****************************************************************/
+    (function init() {
+      applyLazyLoadDefaults();
+      setupLazyFade();
+      fixPortrait();
+
+      // Build mobile skills cards early so they’re ready when user opens Skills
+      buildSkillsCardsIfNeeded();
+
+      // If Skills is active on load (rare), reveal rows
+      if (document.getElementById("skills")?.classList.contains("active")) {
+        revealMatrixRows();
+      }
+
+      // Run validator after paint
+      window.addEventListener("load", () => {
+        SiteValidator.runAll();
+      });
+    })();
   </script>
 
 </body>
